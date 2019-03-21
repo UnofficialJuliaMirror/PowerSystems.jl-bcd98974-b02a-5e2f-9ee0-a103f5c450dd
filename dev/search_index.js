@@ -577,6 +577,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "api/PowerSystems/#PowerSystems.check_ascending_order-Tuple{Array{Int64,N} where N,AbstractString}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.check_ascending_order",
+    "category": "method",
+    "text": "Throws DataFormatError if the array is not in ascending order.\n\n\n\n\n\n"
+},
+
+{
     "location": "api/PowerSystems/#PowerSystems.check_branch_directions-Tuple{Dict{String,Any}}",
     "page": "PowerSystems",
     "title": "PowerSystems.check_branch_directions",
