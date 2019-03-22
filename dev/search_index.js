@@ -425,6 +425,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "api/PowerSystems/#PowerSystems._summary-Tuple{IO,Dict{String,Any}}",
+    "page": "PowerSystems",
+    "title": "PowerSystems._summary",
+    "category": "method",
+    "text": "prints the text summary for a data dictionary to IO\n\n\n\n\n\n"
+},
+
+{
     "location": "api/PowerSystems/#PowerSystems._update_data!-Tuple{Dict{String,Any},Dict{String,Any}}",
     "page": "PowerSystems",
     "title": "PowerSystems._update_data!",
@@ -933,7 +941,7 @@ var documenterSearchIndex = {"docs": [
     "page": "PowerSystems",
     "title": "PowerSystems.load_csv_parser",
     "category": "function",
-    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
+    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary     Parsed LoadZone entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
 },
 
 {
@@ -941,7 +949,7 @@ var documenterSearchIndex = {"docs": [
     "page": "PowerSystems",
     "title": "PowerSystems.load_csv_parser",
     "category": "function",
-    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary     Parsed LoadZone entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
+    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
 },
 
 {
