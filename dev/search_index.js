@@ -109,7 +109,7 @@ var documenterSearchIndex = {"docs": [
     "page": "PowerSystems",
     "title": "PowerSystems.PowerSystem",
     "category": "type",
-    "text": "PowerSystem\n\nA power system defined by fields for buses, generators, loads, branches, and overall system parameters.\n\nConstructor\n\nPowerSystem(buses, generators, loads, branches, storage, basepower; kwargs...)\nPowerSystem(ps_dict; kwargs...)\nPowerSystem(file, ts_folder; kwargs...)\n\nArguments\n\nbuses::Array{Bus,1} : an array of buses\ngenerators::Array{Generator,1} : an array of generators of (possibly) different types\nloads::Array{ElectricLoad,1} : an array of load specifications that includes timing of the loads\nbranches::Array{Branch,1} : an array of branches; may be nothing\nstorage::Array{Storage,1} : an array of storage devices; may be nothing\nbasepower::Float64 : the base power of the system (DOCTODO: is this true? what are the units of base power?)\nps_dict::Dict{String,Any} : the dictionary object containing PowerSystem data\nfile::String, ts_folder::String : the filename and foldername that contain the PowerSystem data\n\nKeyword arguments\n\nrunchecks::Bool : run available checks on input fields\n\nDOCTODO: any other keyword arguments?\n\n\n\n\n\n"
+    "text": "PowerSystem\n\nA power system defined by fields for buses, generators, loads, branches, and overall system parameters.\n\nConstructor\n\nPowerSystem(buses, generators, loads, branches, storage, basepower; kwargs...)\nPowerSystem(ps_dict; kwargs...)\nPowerSystem(file, ts_folder; kwargs...)\n\nArguments\n\nbuses::Array{Bus,1} : an array of buses\ngenerators::Array{Generator,1} : an array of generators of (possibly) different types\nloads::Array{ElectricLoad,1} : an array of load specifications that includes timing of the loads\nbranches::Array{Branch,1} : an array of branches; may be nothing\nstorage::Array{Storage,1} : an array of storage devices; may be nothing\nbasepower::Float64 : the base power of the system (DOCTODO: is this true? what are the units of base power?)\nps_dict::Dict{String,Any} : the dictionary object containing PowerSystem data\nfile::String, ts_folder::String : the filename and foldername that contain the PowerSystem data\n\nKeyword arguments\n\nrunchecks::Bool : run available checks on input fields\n\nDOCTODO: any other keyword arguments? genmapfile, REGEXFILE\n\n\n\n\n\n"
 },
 
 {
@@ -933,7 +933,7 @@ var documenterSearchIndex = {"docs": [
     "page": "PowerSystems",
     "title": "PowerSystems.load_csv_parser",
     "category": "function",
-    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
+    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary     Parsed LoadZone entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
 },
 
 {
@@ -941,7 +941,7 @@ var documenterSearchIndex = {"docs": [
     "page": "PowerSystems",
     "title": "PowerSystems.load_csv_parser",
     "category": "function",
-    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary     Parsed LoadZone entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
+    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
 },
 
 {
@@ -1046,6 +1046,14 @@ var documenterSearchIndex = {"docs": [
     "title": "PowerSystems.merge_generic_data",
     "category": "method",
     "text": "merges Matpower tables based on the table extension syntax\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.move_genfuel_and_gentype!-Tuple{Dict{String,Any}}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.move_genfuel_and_gentype!",
+    "category": "method",
+    "text": "Move gentype and genfuel fields to be subfields of gen\n\n\n\n\n\n"
 },
 
 {
@@ -1302,6 +1310,14 @@ var documenterSearchIndex = {"docs": [
     "title": "PowerSystems.read_datetime",
     "category": "method",
     "text": "Arg:     Dataframes which includes a timerseries columns of either:         Year, Month, Day, Period       or         DateTime       or         nothing (creates a today referenced DateTime Column) Returns:     Dataframe with a DateTime columns\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.read_gen-Tuple{Any,Any}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.read_gen",
+    "category": "method",
+    "text": "Transfer generators to ps_dict according to their classification\n\n\n\n\n\n"
 },
 
 {
