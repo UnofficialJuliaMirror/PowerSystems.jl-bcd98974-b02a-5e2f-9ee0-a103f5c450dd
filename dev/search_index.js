@@ -1161,7 +1161,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/PowerSystems/#PowerSystems.parse_matpower_string-Tuple{String}",
+    "location": "api/PowerSystems/#PowerSystems.parse_matpower_string-Tuple{Array{String,N} where N}",
     "page": "PowerSystems",
     "title": "PowerSystems.parse_matpower_string",
     "category": "method",
