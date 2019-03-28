@@ -89,6 +89,22 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "api/PowerSystems/#PowerSystems.LogEvent",
+    "page": "PowerSystems",
+    "title": "PowerSystems.LogEvent",
+    "category": "type",
+    "text": "Contains information describing a log event.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.LogEventTracker",
+    "page": "PowerSystems",
+    "title": "PowerSystems.LogEventTracker",
+    "category": "type",
+    "text": "LogEventTracker(Tuple{Logging.LogLevel})\n\nTracks counts of all log events by level.\n\nExamples\n\nLogEventTracker()\nLogEventTracker((Logging.Info, Logging.Warn, Logging.Error))\n\n\n\n\n\n"
+},
+
+{
     "location": "api/PowerSystems/#PowerSystems.MultiConductorMatrix",
     "page": "PowerSystems",
     "title": "PowerSystems.MultiConductorMatrix",
@@ -102,6 +118,22 @@ var documenterSearchIndex = {"docs": [
     "title": "PowerSystems.MultiConductorVector",
     "category": "type",
     "text": "a data structure for working with multiconductor datasets\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.MultiLogger",
+    "page": "PowerSystems",
+    "title": "PowerSystems.MultiLogger",
+    "category": "type",
+    "text": "MultiLogger(Array{AbstractLogger}, Union{LogEventTracker, Nothing})\n\nRedirects log events to multiple loggers. The primary use case is to allow logging to both a file and the console. Secondarily, it can track the counts of all log messages.\n\nExample\n\nMultiLogger([ConsoleLogger(stderr), SimpleLogger(stream)], LogEventTracker())\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.MultiLogger-Union{Tuple{Array{T,N} where N}, Tuple{T}} where T<:Base.CoreLogging.AbstractLogger",
+    "page": "PowerSystems",
+    "title": "PowerSystems.MultiLogger",
+    "category": "method",
+    "text": "Creates a MultiLogger with no event tracking.\n\nExample\n\nMultiLogger([ConsoleLogger(stderr), SimpleLogger(stream)])\n\n\n\n\n\n"
 },
 
 {
@@ -185,6 +217,30 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "api/PowerSystems/#PowerSystems.configure_logging-Tuple{}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.configure_logging",
+    "category": "method",
+    "text": "configure_logging([console, console_stream, console_level,\n                   file, filename, file_level, file_mode,\n                   tracker, set_global])\n\nCreates console and file loggers per caller specification and returns a MultiLogger.\n\nNote: If logging to a file users must call Base.close() on the returned MultiLogger to ensure that all events get flushed.\n\nArguments\n\nconsole::Bool=true: create console logger\nconsole_stream::IOStream=stderr: stream for console logger\nconsole_level::Logging.LogLevel=Logging.Error: level for console messages\nfile::Bool=true: create file logger\nfilename::String=log.txt: log file\nfile_level::Logging.LogLevel=Logging.Info: level for file messages\nfile_mode::String=w+: mode used when opening log file\ntracker::Union{LogEventTracker, Nothing}=LogEventTracker(): optionally track log events\nset_global::Bool=true: set the created logger as the global logger\n\nExample\n\nlogger = configure_logging(filename=\"mylog.txt\")\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.get_log_events-Tuple{LogEventTracker,Base.CoreLogging.LogLevel}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.get_log_events",
+    "category": "method",
+    "text": "Returns an iterable of log events for a level.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.open_file_logger",
+    "page": "PowerSystems",
+    "title": "PowerSystems.open_file_logger",
+    "category": "function",
+    "text": "open_file_logger(func, filename[, level, mode])\n\nOpens a file logger using Logging.SimpleLogger.\n\nExample\n\nopen_file_logger(\"log.txt\", Logging.Info) do logger\n    global_logger(logger)\n    @info \"hello world\"\nend\n\n\n\n\n\n"
+},
+
+{
     "location": "api/PowerSystems/#PowerSystems.parse_file-Tuple{String}",
     "page": "PowerSystems",
     "title": "PowerSystems.parse_file",
@@ -214,6 +270,22 @@ var documenterSearchIndex = {"docs": [
     "title": "PowerSystems.read_data_files",
     "category": "method",
     "text": "Read all forecast CSV\'s in the path provided, the struct of the data should follow this format folder : PV             file : DAYAHEAD             file : REALTIME Folder name should be the device type Files should only contain one real-time and day-ahead forecast Args:     files: A string Returns:     A dictionary with the CSV files as dataframes and folder names as keys\n\nTODO : Stochasti/Multiple scenarios\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.report_log_summary-Tuple{LogEventTracker}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.report_log_summary",
+    "category": "method",
+    "text": "Returns a summary of log event counts by level.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.report_log_summary-Tuple{MultiLogger}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.report_log_summary",
+    "category": "method",
+    "text": "Returns a summary of log event counts by level.\n\n\n\n\n\n"
 },
 
 {
@@ -254,6 +326,22 @@ var documenterSearchIndex = {"docs": [
     "title": "PowerSystems.GeneratorCostModel",
     "category": "type",
     "text": "From http://www.pserc.cornell.edu/matpower/MATPOWER-manual.pdf Table B-4\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#Base.close-Tuple{MultiLogger}",
+    "page": "PowerSystems",
+    "title": "Base.close",
+    "category": "method",
+    "text": "Ensures that any file streams are flushed and closed.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#Base.flush-Tuple{MultiLogger}",
+    "page": "PowerSystems",
+    "title": "Base.flush",
+    "category": "method",
+    "text": "Flush any file streams.\n\n\n\n\n\n"
 },
 
 {
@@ -918,6 +1006,14 @@ var documenterSearchIndex = {"docs": [
     "title": "PowerSystems.import_remaining!",
     "category": "method",
     "text": "Imports remaining keys from data_in into data_out, excluding keys in exclude\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.increment_count-Tuple{LogEventTracker,LogEvent,Bool}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.increment_count",
+    "category": "method",
+    "text": "Increments the count of a log event.\n\n\n\n\n\n"
 },
 
 {
