@@ -873,7 +873,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/PowerSystems/#PowerSystems.csv2ps_dict-Tuple{String}",
+    "location": "api/PowerSystems/#PowerSystems.csv2ps_dict-Tuple{String,Float64}",
     "page": "PowerSystems",
     "title": "PowerSystems.csv2ps_dict",
     "category": "method",
@@ -1401,7 +1401,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/PowerSystems/#PowerSystems.read_csv_data-Tuple{String}",
+    "location": "api/PowerSystems/#PowerSystems.read_csv_data-Tuple{String,Float64}",
     "page": "PowerSystems",
     "title": "PowerSystems.read_csv_data",
     "category": "method",
