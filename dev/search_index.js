@@ -169,22 +169,6 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/PowerSystems/#PowerSystems.System-Tuple{Array{#s283,1} where #s283<:Bus,Array{#s282,1} where #s282<:Generator,Array{#s281,1} where #s281<:ElectricLoad,Array{#s280,1} where #s280<:Storage,Float64}",
-    "page": "PowerSystems",
-    "title": "PowerSystems.System",
-    "category": "method",
-    "text": "Constructs System with Generators but no branches.\n\n\n\n\n\n"
-},
-
-{
-    "location": "api/PowerSystems/#PowerSystems.System-Tuple{Array{#s286,1} where #s286<:Bus,Array{#s285,1} where #s285<:Generator,Array{#s284,1} where #s284<:ElectricLoad,Float64}",
-    "page": "PowerSystems",
-    "title": "PowerSystems.System",
-    "category": "method",
-    "text": "Constructs System with Generators but no branches or storage.\n\n\n\n\n\n"
-},
-
-{
     "location": "api/PowerSystems/#PowerSystems.System-Tuple{Array{Bus,1},Array{#s283,1} where #s283<:Generator,Array{#s282,1} where #s282<:ElectricLoad,Union{Nothing, Array{#s281,1} where #s281<:Branch},Union{Nothing, Array{#s280,1} where #s280<:Storage},Float64}",
     "page": "PowerSystems",
     "title": "PowerSystems.System",
@@ -198,6 +182,22 @@ var documenterSearchIndex = {"docs": [
     "title": "PowerSystems.System",
     "category": "method",
     "text": "Constructs System with Generators but no storage.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.System-Tuple{Array{Bus,1},Array{#s286,1} where #s286<:Generator,Array{#s285,1} where #s285<:ElectricLoad,Array{#s284,1} where #s284<:Storage,Float64}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.System",
+    "category": "method",
+    "text": "Constructs System with Generators but no branches.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.System-Tuple{Array{Bus,1},Array{#s289,1} where #s289<:Generator,Array{#s288,1} where #s288<:ElectricLoad,Float64}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.System",
+    "category": "method",
+    "text": "Constructs System with Generators but no branches or storage.\n\n\n\n\n\n"
 },
 
 {
@@ -289,10 +289,10 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/PowerSystems/#PowerSystems.get_component_counts",
+    "location": "api/PowerSystems/#PowerSystems.get_component_counts-Tuple{Dict{DataType,Any}}",
     "page": "PowerSystems",
     "title": "PowerSystems.get_component_counts",
-    "category": "function",
+    "category": "method",
     "text": "Returns a Tuple of Arrays of component types and counts.\n\n\n\n\n\n"
 },
 
@@ -1113,7 +1113,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/PowerSystems/#PowerSystems.get_all_concrete_subtypes-Union{Tuple{Type{T}}, Tuple{T}, Tuple{Type{T},Any}} where T",
+    "location": "api/PowerSystems/#PowerSystems.get_all_concrete_subtypes-Union{Tuple{Type{T}}, Tuple{T}} where T",
     "page": "PowerSystems",
     "title": "PowerSystems.get_all_concrete_subtypes",
     "category": "method",
@@ -1213,7 +1213,7 @@ var documenterSearchIndex = {"docs": [
     "page": "PowerSystems",
     "title": "PowerSystems.load_csv_parser",
     "category": "function",
-    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary     Parsed LoadZone entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
+    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
 },
 
 {
@@ -1221,7 +1221,7 @@ var documenterSearchIndex = {"docs": [
     "page": "PowerSystems",
     "title": "PowerSystems.load_csv_parser",
     "category": "function",
-    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
+    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary     Parsed LoadZone entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
 },
 
 {
