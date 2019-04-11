@@ -73,6 +73,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "api/PowerSystems/#PowerSystems.ConcreteSystem",
+    "page": "PowerSystems",
+    "title": "PowerSystems.ConcreteSystem",
+    "category": "type",
+    "text": "A System struct that stores all devices in arrays with concrete types. This is a temporary implementation that will allow consumers of PowerSystems to test the functionality before it is finalized.\n\n\n\n\n\n"
+},
+
+{
     "location": "api/PowerSystems/#PowerSystems.EconRenewable",
     "page": "PowerSystems",
     "title": "PowerSystems.EconRenewable",
@@ -137,19 +145,11 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/PowerSystems/#PowerSystems.PowerSystem",
-    "page": "PowerSystems",
-    "title": "PowerSystems.PowerSystem",
-    "category": "type",
-    "text": "PowerSystem\n\nA power system defined by fields for buses, generators, loads, branches, and overall system parameters.\n\nConstructor\n\nPowerSystem(buses, generators, loads, branches, storage, basepower; kwargs...)\nPowerSystem(ps_dict; kwargs...)\nPowerSystem(file, ts_folder; kwargs...)\n\nArguments\n\nbuses::Array{Bus,1} : an array of buses\ngenerators::Array{Generator,1} : an array of generators of (possibly) different types\nloads::Array{ElectricLoad,1} : an array of load specifications that includes timing of the loads\nbranches::Array{Branch,1} : an array of branches; may be nothing\nstorage::Array{Storage,1} : an array of storage devices; may be nothing\nbasepower::Float64 : the base power of the system (DOCTODO: is this true? what are the units of base power?)\nps_dict::Dict{String,Any} : the dictionary object containing PowerSystem data\nfile::String, ts_folder::String : the filename and foldername that contain the PowerSystem data\n\nKeyword arguments\n\nrunchecks::Bool : run available checks on input fields\n\nDOCTODO: any other keyword arguments? genmapfile, REGEXFILE\n\n\n\n\n\n"
-},
-
-{
     "location": "api/PowerSystems/#PowerSystems.ProportionalReserve",
     "page": "PowerSystems",
     "title": "PowerSystems.ProportionalReserve",
     "category": "type",
-    "text": "ProportionalReserve(name::String,         contributingdevices::PowerSystemDevice,         timeframe::Float64,         requirement::Dict{Any,Dict{Int,TimeSeries.TimeArray}})\n\nData Structure for a proportional reserve product for system simulations. The data structure can be called calling all the fields directly or using named fields. name - description contributingdevices - devices from which the product can be procured timeframe - the relative saturation timeframe requirement - the required quantity of the product\n\nExamples\n\n```jldoctest\n\n\n\n\n\n"
+    "text": "ProportionalReserve(name::String,         contributingdevices::Device,         timeframe::Float64,         requirement::Dict{Any,Dict{Int,TimeSeries.TimeArray}})\n\nData Structure for a proportional reserve product for system simulations. The data structure can be called calling all the fields directly or using named fields. name - description contributingdevices - devices from which the product can be procured timeframe - the relative saturation timeframe requirement - the required quantity of the product\n\nExamples\n\n```jldoctest\n\n\n\n\n\n"
 },
 
 {
@@ -157,7 +157,71 @@ var documenterSearchIndex = {"docs": [
     "page": "PowerSystems",
     "title": "PowerSystems.StaticReserve",
     "category": "type",
-    "text": "StaticReserve(name::String,         contributingdevices::PowerSystemDevice,         timeframe::Float64,         requirement::Float64})\n\nData Structure for the procurement products for system simulations. The data structure can be called calling all the fields directly or using named fields. name - description contributingdevices - devices from which the product can be procured timeframe - the relative saturation timeframe requirement - the required quantity of the product\n\nExamples\n\n```jldoctest\n\n\n\n\n\n"
+    "text": "StaticReserve(name::String,         contributingdevices::Device,         timeframe::Float64,         requirement::Float64})\n\nData Structure for the procurement products for system simulations. The data structure can be called calling all the fields directly or using named fields. name - description contributingdevices - devices from which the product can be procured timeframe - the relative saturation timeframe requirement - the required quantity of the product\n\nExamples\n\n```jldoctest\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.System",
+    "page": "PowerSystems",
+    "title": "PowerSystems.System",
+    "category": "type",
+    "text": "System\n\nA power system defined by fields for buses, generators, loads, branches, and overall system parameters.\n\nConstructor\n\nSystem(buses, generators, loads, branches, storage, basepower; kwargs...)\nSystem(buses, generators, loads, branches, basepower; kwargs...)\nSystem(buses, generators, loads, basepower; kwargs...)\nSystem(ps_dict; kwargs...)\nSystem(file, ts_folder; kwargs...)\nSystem(; kwargs...)\n\nArguments\n\nbuses::Vector{Bus} : an array of buses\ngenerators::Vector{Generator} : an array of generators of (possibly) different types\nloads::Vector{ElectricLoad} : an array of load specifications that includes timing of the loads\nbranches::Union{Nothing, Vector{Branch}} : an array of branches; may be nothing\nstorage::Union{Nothing, Vector{Storage}} : an array of storage devices; may be nothing\nbasepower::Float64 : the base power of the system (DOCTODO: is this true? what are the units of base power?)\nps_dict::Dict{String,Any} : the dictionary object containing System data\nfile::String, ts_folder::String : the filename and foldername that contain the System data\n\nKeyword arguments\n\nrunchecks::Bool : run available checks on input fields\n\nDOCTODO: any other keyword arguments? genmapfile, REGEXFILE\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.System-Tuple{Array{#s283,1} where #s283<:Bus,Array{#s282,1} where #s282<:Generator,Array{#s281,1} where #s281<:ElectricLoad,Array{#s280,1} where #s280<:Storage,Float64}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.System",
+    "category": "method",
+    "text": "Constructs System with Generators but no branches.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.System-Tuple{Array{#s286,1} where #s286<:Bus,Array{#s285,1} where #s285<:Generator,Array{#s284,1} where #s284<:ElectricLoad,Float64}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.System",
+    "category": "method",
+    "text": "Constructs System with Generators but no branches or storage.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.System-Tuple{Array{Bus,1},Array{#s283,1} where #s283<:Generator,Array{#s282,1} where #s282<:ElectricLoad,Union{Nothing, Array{#s281,1} where #s281<:Branch},Union{Nothing, Array{#s280,1} where #s280<:Storage},Float64}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.System",
+    "category": "method",
+    "text": "Primary System constructor. Funnel point for all other outer constructors.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.System-Tuple{Array{Bus,1},Array{#s286,1} where #s286<:Generator,Array{#s285,1} where #s285<:ElectricLoad,Array{#s284,1} where #s284<:Branch,Float64}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.System",
+    "category": "method",
+    "text": "Constructs System with Generators but no storage.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.System-Tuple{Dict{String,Any}}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.System",
+    "category": "method",
+    "text": "Constructs System from a ps_dict.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.System-Tuple{String,String}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.System",
+    "category": "method",
+    "text": "Constructs System from a file containing Matpower, PTI, or JSON data.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.System-Tuple{}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.System",
+    "category": "method",
+    "text": "Constructs System with default values.\n\n\n\n\n\n"
 },
 
 {
@@ -225,11 +289,35 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "api/PowerSystems/#PowerSystems.get_component_counts",
+    "page": "PowerSystems",
+    "title": "PowerSystems.get_component_counts",
+    "category": "function",
+    "text": "Returns a Tuple of Arrays of component types and counts.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.get_components-Union{Tuple{T}, Tuple{Type{T},ConcreteSystem}} where T<:Component",
+    "page": "PowerSystems",
+    "title": "PowerSystems.get_components",
+    "category": "method",
+    "text": "Returns an array of components from the System. T must be a concrete type.\n\nExample\n\ndevices = PowerSystems.get_components(ThermalDispatch, system)\n\n\n\n\n\n"
+},
+
+{
     "location": "api/PowerSystems/#PowerSystems.get_log_events-Tuple{LogEventTracker,Base.CoreLogging.LogLevel}",
     "page": "PowerSystems",
     "title": "PowerSystems.get_log_events",
     "category": "method",
     "text": "Returns an iterable of log events for a level.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.get_mixed_components-Union{Tuple{T}, Tuple{Type{T},ConcreteSystem}} where T<:Component",
+    "page": "PowerSystems",
+    "title": "PowerSystems.get_mixed_components",
+    "category": "method",
+    "text": "Returns an iterable over component arrays that are subtypes of T. To create a new array with all component arrays concatenated, call collect on the returned iterable.  Note that this will involve copying the data and the resulting array will be less performant than arrays of concrete types.\n\nExample\n\niter = PowerSystems.get_mixed_components(Device, system)\nfor device in iter\n    @show device\nend\n\n\n\n\n\n"
 },
 
 {
@@ -289,11 +377,75 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "api/PowerSystems/#PowerSystems.show_component_counts",
+    "page": "PowerSystems",
+    "title": "PowerSystems.show_component_counts",
+    "category": "function",
+    "text": "Shows the component types and counts in a table. If show_hierarchy is true then include a column showing the type hierachy. The display is in order of depth-first type hierarchy.\n\n\n\n\n\n"
+},
+
+{
     "location": "api/PowerSystems/#PowerSystems.update_data!-Tuple{Dict{String,Any},Dict{String,Any}}",
     "page": "PowerSystems",
     "title": "PowerSystems.update_data!",
     "category": "method",
     "text": "recursively applies new_data to data, overwriting information\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.validate-Tuple{Branch}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.validate",
+    "category": "method",
+    "text": "Validates the contents of a Branch.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.validate-Tuple{Bus}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.validate",
+    "category": "method",
+    "text": "Validates the contents of a Bus.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.validate-Tuple{ElectricLoad}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.validate",
+    "category": "method",
+    "text": "Validates the contents of an ElectricLoad.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.validate-Tuple{GenClasses}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.validate",
+    "category": "method",
+    "text": "Validates the contents of generators.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.validate-Tuple{Generator}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.validate",
+    "category": "method",
+    "text": "Validates the contents of a Generator.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.validate-Tuple{Storage}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.validate",
+    "category": "method",
+    "text": "Validates the contents of a Storage.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.validate-Tuple{System}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.validate",
+    "category": "method",
+    "text": "Validates the contents of a System.\n\n\n\n\n\n"
 },
 
 {
@@ -425,6 +577,14 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "api/PowerSystems/#PowerSystems._get_components_by_type-Union{Tuple{T}, Tuple{Type{T},Dict{DataType,Array{#s296,1} where #s296<:Component}}, Tuple{Type{T},Dict{DataType,Array{#s296,1} where #s296<:Component},Dict{DataType,Any}}} where T<:Component",
+    "page": "PowerSystems",
+    "title": "PowerSystems._get_components_by_type",
+    "category": "method",
+    "text": "Builds a nested dictionary by traversing through the PowerSystems type hierarchy. The bottom of each dictionary is an array of concrete types.\n\nExample\n\ndata[Device][Injection][Generator][ThermalGen][ThermalDispatch][1]\nThermalDispatch:\n   name: 322_CT_6\n   available: true\n   bus: Bus(name=\"Cole\")\n   tech: TechThermal\n   econ: EconThermal\n\n\n\n\n\n"
+},
+
+{
     "location": "api/PowerSystems/#PowerSystems._grey-Tuple{String}",
     "page": "PowerSystems",
     "title": "PowerSystems._grey",
@@ -486,14 +646,6 @@ var documenterSearchIndex = {"docs": [
     "title": "PowerSystems._select_largest_component",
     "category": "method",
     "text": "\n\n\n\n"
-},
-
-{
-    "location": "api/PowerSystems/#PowerSystems._showpages-Tuple{Int64,Int64,Array{Int64,N} where N}",
-    "page": "PowerSystems",
-    "title": "PowerSystems._showpages",
-    "category": "method",
-    "text": "calculate the paging\n\n> using MarketData\n> AAPL  # this function will return `UnitRange{Int64}[1:9, 10:12]`\n\n\n\n\n\n"
 },
 
 {
@@ -953,11 +1105,35 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "api/PowerSystems/#PowerSystems.get_abstract_subtypes-Union{Tuple{Type{T}}, Tuple{T}} where T",
+    "page": "PowerSystems",
+    "title": "PowerSystems.get_abstract_subtypes",
+    "category": "method",
+    "text": "Returns an array of abstract types that are direct subtypes of T.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.get_all_concrete_subtypes-Union{Tuple{Type{T}}, Tuple{T}, Tuple{Type{T},Any}} where T",
+    "page": "PowerSystems",
+    "title": "PowerSystems.get_all_concrete_subtypes",
+    "category": "method",
+    "text": "Returns an array of all concrete subtypes of T.\n\n\n\n\n\n"
+},
+
+{
     "location": "api/PowerSystems/#PowerSystems.get_bus_value-Tuple{Any,Any,Any}",
     "page": "PowerSystems",
     "title": "PowerSystems.get_bus_value",
     "category": "method",
     "text": "get_bus_value(bus_i, field, pm_data)\n\nReturns the value of field of bus_i from the PowerModels data. Requires \"bus\" Dict to already be populated.\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.get_concrete_subtypes-Union{Tuple{Type{T}}, Tuple{T}} where T",
+    "page": "PowerSystems",
+    "title": "PowerSystems.get_concrete_subtypes",
+    "category": "method",
+    "text": "Returns an array of concrete types that are direct subtypes of T.\n\n\n\n\n\n"
 },
 
 {
@@ -1037,7 +1213,7 @@ var documenterSearchIndex = {"docs": [
     "page": "PowerSystems",
     "title": "PowerSystems.load_csv_parser",
     "category": "function",
-    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
+    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary     Parsed LoadZone entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
 },
 
 {
@@ -1045,7 +1221,7 @@ var documenterSearchIndex = {"docs": [
     "page": "PowerSystems",
     "title": "PowerSystems.load_csv_parser",
     "category": "function",
-    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary     Parsed LoadZone entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
+    "text": "Args:     A DataFrame with the same column names as in RTS_GMLC bus.csv file     Parsed Bus entry of PowerSystems dictionary Optional Args:     DataFrame of LoadZone timeseries data     Dict of bus column names     Dict of load LoadZone timeseries column names Returns:     A Nested Dictionary with keys as load names and values as load data     dictionary with same keys as the device struct\n\n\n\n\n\n"
 },
 
 {
@@ -1073,7 +1249,7 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
-    "location": "api/PowerSystems/#PowerSystems.make_forecast_dict-Tuple{Dict{String,Any},Dates.Period,Int64,Array{ElectricLoad,1},Array{PowerSystems.PowerSystemDevice,1}}",
+    "location": "api/PowerSystems/#PowerSystems.make_forecast_dict-Tuple{Dict{String,Any},Dates.Period,Int64,Array{ElectricLoad,1},Array{Device,1}}",
     "page": "PowerSystems",
     "title": "PowerSystems.make_forecast_dict",
     "category": "method",
@@ -1521,11 +1697,27 @@ var documenterSearchIndex = {"docs": [
 },
 
 {
+    "location": "api/PowerSystems/#PowerSystems.supertypes-Union{Tuple{Type{T}}, Tuple{T}, Tuple{Type{T},Any}} where T",
+    "page": "PowerSystems",
+    "title": "PowerSystems.supertypes",
+    "category": "method",
+    "text": "Returns an array of all super types of T.\n\n\n\n\n\n"
+},
+
+{
     "location": "api/PowerSystems/#PowerSystems.type_array-Union{Tuple{Array{T,1}}, Tuple{T}} where T<:AbstractString",
     "page": "PowerSystems",
     "title": "PowerSystems.type_array",
     "category": "method",
     "text": "Attempts to determine the type of an array of strings extracted from a matlab file\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.type_to_symbol-Tuple{DataType}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.type_to_symbol",
+    "category": "method",
+    "text": "Converts a DataType to a Symbol, stripping off the module name(s).\n\n\n\n\n\n"
 },
 
 {
@@ -1542,6 +1734,14 @@ var documenterSearchIndex = {"docs": [
     "title": "PowerSystems.update_data",
     "category": "method",
     "text": "recursively applies new_data to data, overwriting information\n\n\n\n\n\n"
+},
+
+{
+    "location": "api/PowerSystems/#PowerSystems.validate_devices-Tuple{Array{#s294,1} where #s294<:Device}",
+    "page": "PowerSystems",
+    "title": "PowerSystems.validate_devices",
+    "category": "method",
+    "text": "Validates an array of devices.\n\n\n\n\n\n"
 },
 
 {
