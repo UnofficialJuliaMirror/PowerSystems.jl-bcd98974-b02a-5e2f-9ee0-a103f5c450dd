@@ -7,6 +7,7 @@ code.
 * Developers focus on producing high quality code, not how to format it.
 
 ## Base
+
 * Follow the official
 [Julia style guide](https://docs.julialang.org/en/v1/manual/style-guide/index.html)
 except for deviations noted here.
@@ -21,12 +22,14 @@ including its deviations from the Julia style guide.  In particular, note its po
 * Read [The Zen of Python](https://www.python.org/dev/peps/pep-0020).
 
 ## Code Organization
+
 * Import standard modules, then 3rd-party modules, then yours. Include a blank
 line between each group.
 
 ### Modules:  TODO
 
 ## Comments
+
 * Use comments to describe non-obvious or non-trivial aspects of code.
 Describe why something was done but not how.  The "how" should be apparent from
 the code itself.
@@ -39,6 +42,7 @@ the code itself.
   * PERF:  known performance limitation that needs improvement
 
 ## Constructors
+
 * Per guidance from Julia documentation, use inner constructors to enforce
 restrictions on parameters or to allow construction of self-referential
 objects.
@@ -50,6 +54,7 @@ members if no inner constructor is defined.
 One exception is the case where one file has all single-line functions.
 
 ## Exceptions
+
 * Use exceptions for unexpected errors and not for normal error handling.
   * Detection of an unsupported data format from a user should likely throw
 an exception and terminate the application.
@@ -60,12 +65,14 @@ after detecting bad user input. Note that they may be compiled out in release
 builds.
 
 ## Globals
+
 * Global constants should use UPPER_CASE and be declared const.
 * If global variables are needed, prefix them with "g_".
 * Don't use magic numbers. Instead, define const globals or Enums (Julia
 @enum).
 
 ## One-line Conditionals
+
 Julia code base uses this idiom frequently:  ```<cond> && <statement>```
 [Example](https://docs.julialang.org/en/v1.0/manual/control-flow/#Short-Circuit-Evaluation-1):
 >
@@ -90,9 +97,11 @@ There are many examples in our codebase that use the form ```<cond> ?
 if/else statement.
 
 ## Unit Tests
+
 All code should be tested.
 
 ## Whitespace
+
 * If many function arguments cause the line length to be exceeded, put one
 argument per line. In some cases it may make sense to pair some variables on
 the same line.
